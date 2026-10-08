@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Source+Sans+3:wght@400;600&display=swap");
+
+/* colors to use in more than one place */
+:root {
+    --primary-bg: #f0f2f4;
+    --primary-text: #241c16;
+    --highlight: #7a2e18;
+    --card: #fffdf8;
+    --secondary-bg: #ddd6db;
+    --muted: #4a433c;
+    --line: #e3d8c8;
+    --secondary: #b05e4f;
+}
+
+body {
+    margin: 0;
+    padding: 2.5rem 1.25rem 3.5rem;
+    background: var(--primary-bg);
+    color: var(--primary-text);
+    font-family: "Source Sans 3", Georgia, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+}
+
+/* keep the words from stretching all the way */
+header,
+main,
+footer {
+    max-width: 38rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+header > a:link,
+header > a:visited {
+    display: inline-block;
+    color: var(--primary-text);
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    text-decoration: none;
+}
+
+header > a:hover {
+    color: var(--highlight);
+}
+
+/* the bar with About, Projects, and Contact */
+nav {
+    margin-top: 1.15rem;
+    padding: 0.2rem 0.6rem;
+    background: var(--secondary);
+    border-radius: 999px;
+    text-align: center;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    width: 32%;
+    font-size: 1.0625rem;
+}
+
+nav ul li a:link,
+nav ul li a:visited {
+    display: inline-block;
+    padding: 0.7rem 0.4rem;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+/* on a phone, don't let Contact get cut off */
+@media (max-width: 36rem) {
+    nav ul li {
+        width: auto;
+        margin: 0 0.55rem;
+    }
+}
+
+h1 {
+    margin: 0;
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 2.35rem;
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+}
+
+h2 {
+    margin: 0 0 0.9rem;
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+h3 {
+    margin: 0;
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+p {
+    margin: 0 0 1rem;
+}
+
+a:link,
+a:visited {
+    color: var(--highlight);
+}
+
+section {
+    margin-top: 2.4rem;
+    padding-top: 1.8rem;
+    border-top: 1px solid var(--line);
+}
+
+#intro {
+    margin-top: 2.8rem;
+    padding-top: 0;
+    border-top: 0;
+}
+
+#about {
+    padding-bottom: 0.25rem;
+}
+
+/* round the photo a little */
+.profile {
+    display: block;
+    width: 18rem;
+    max-width: 100%;
+    height: auto;
+    margin: 0.2rem 0 1.3rem;
+    border: 4px solid var(--card);
+    border-radius: 0.7rem;
+    box-shadow: 0 12px 28px rgba(36, 28, 22, 0.16);
+}
+
+/* gray box behind each project */
+#projects article {
+    margin-bottom: 0.9rem;
+    padding: 1rem 1.15rem 0.15rem;
+    background: var(--secondary-bg);
+    border-radius: 0.65rem;
+    box-shadow: 0 8px 18px rgba(36, 28, 22, 0.08);
+}
+
+#projects article h3 {
+    color: var(--highlight);
+}
+
+#projects article p {
+    margin-top: 0.35rem;
+}
+
+address {
+    font-style: normal;
+    font-size: 1.125rem;
+}
+
+footer {
+    margin-top: 2.6rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+footer p {
+    margin-bottom: 0;
+}
