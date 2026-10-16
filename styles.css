@@ -59,12 +59,11 @@ nav ul {
     margin: 0;
     padding: 0;
     list-style: none;
-    font-size: 0;
+    display: flex;
+    justify-content: space-around;
 }
 
 nav ul li {
-    display: inline-block;
-    width: 32%;
     font-size: 1.0625rem;
 }
 
@@ -80,14 +79,6 @@ nav ul li a:visited {
 nav ul li a:hover {
     text-decoration: underline;
     text-underline-offset: 0.2em;
-}
-
-/* on a phone, don't let Contact get cut off */
-@media (max-width: 36rem) {
-    nav ul li {
-        width: auto;
-        margin: 0 0.55rem;
-    }
 }
 
 h1 {
@@ -151,6 +142,15 @@ section {
     box-shadow: 0 12px 28px rgba(36, 28, 22, 0.16);
 }
 
+/* AI prompt: In style.css only, make the #projects section use CSS Grid. 
+Keep it as one column on mobile, then switch to two columns at 768px and wider 
+with a 1rem gap. Keep the #projects heading on its own row above the project cards. 
+Don’t change any HTML files. */
+#projects {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
 /* gray box behind each project */
 #projects article {
     margin-bottom: 0.9rem;
@@ -158,6 +158,14 @@ section {
     background: var(--secondary-bg);
     border-radius: 0.65rem;
     box-shadow: 0 8px 18px rgba(36, 28, 22, 0.08);
+}
+
+/* AI prompt: In style.css only, make the #projects section use CSS Grid. 
+Keep it as one column on mobile, then switch to two columns at 768px and wider 
+with a 1rem gap. Keep the #projects heading on its own row above the project cards. 
+Don’t change any HTML files. */
+#projects article:last-child {
+    margin-bottom: 0;
 }
 
 #projects article h3 {
@@ -183,4 +191,120 @@ footer {
 
 footer p {
     margin-bottom: 0;
+}
+
+/* tablet layout */
+@media (min-width: 768px) {
+    /* Make them wider in tablet layout */
+    header,
+    main,
+    footer {
+        max-width: 46rem;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    /* AI prompt: In style.css only, make the #projects section use CSS Grid. 
+    Keep it as one column on mobile, then switch to two columns at 768px and wider 
+    with a 1rem gap. Keep the #projects heading on its own row above the project cards. 
+    Don’t change any HTML files. */
+    /* two columns of project cards */
+    #projects {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    #projects h2 {
+        grid-column: 1 / -1;
+        margin-bottom: 0;
+    }
+
+    #projects article {
+        margin-bottom: 0;
+    }
+
+    /* Make the profile wider in tablet layout */
+    .profile {
+        width: 20rem;
+    }
+}
+
+/* desktop layout */
+@media (min-width: 1024px) {
+    header,
+    main,
+    footer {
+        max-width: 56rem;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    
+    /* three columns of project cards */
+    #projects {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+    }
+
+    /* AI prompt: In style.css only, make the About section use Grid on larger screens. 
+    Keep it stacked on mobile, then at 1024px and wider put the profile picture 
+    and the About text side by side with some space between them. Align them at 
+    the top so it still looks good even if the text is taller than the image. 
+    Don’t change any HTML files. */
+    /* photo on the left, About text on the right */
+    #about {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto 1fr;
+        column-gap: 2rem;
+        align-items: start;
+    }
+
+    #about h2 {
+        grid-column: 1 / -1;
+    }
+
+    #about .profile {
+        grid-column: 1;
+        grid-row: 2 / 4;
+    }
+
+    #about p {
+        grid-column: 2;
+    }
+
+    .profile {
+        width: 22rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    header,
+    main,
+    footer {
+        max-width: 66rem;
+    }
+
+    #projects {
+        gap: 1.5rem;
+    }
+
+    .profile {
+        width: 24rem;
+    }
+}
+
+@media (min-width: 1440px) {
+    header,
+    main,
+    footer {
+        max-width: 74rem;
+    }
+
+    #projects {
+        gap: 1.75rem;
+    }
+
+    .profile {
+        width: 26rem;
+    }
 }
