@@ -36,4 +36,4 @@ I also tested that the website can be navigated by using a keyboard:
 
 ## Keyboard navigation video
 
-Video link: https://drive.google.com/file/d/1pyiXiBTj5PP4L1nwUyAU6N_BXmjwPFUX/view?usp=sharing
+Video link: https://drive.google.com/file/d/1pyiXiBTj5PP4L1nwUyAU6N_BXmjwPFUX/view?usp=sharing (Please select 1080p in the player for best quality.)
