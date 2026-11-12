@@ -10,6 +10,20 @@
     --muted: #4a433c;
     --line: #e3d8c8;
     --secondary: #b05e4f;
+    color-scheme: light;
+}
+
+/* inverse palette, switched on by theme.js */
+:root[data-theme="dark"] {
+    --primary-bg: #17181a;
+    --primary-text: #ece6df;
+    --highlight: #f0a58f;
+    --card: #2a2724;
+    --secondary-bg: #2f2b2e;
+    --muted: #b8aea4;
+    --line: #3a332c;
+    --secondary: #8f4a3e;
+    color-scheme: dark;
 }
 
 body {
@@ -44,6 +58,48 @@ header > a:visited {
 
 header > a:hover {
     color: var(--highlight);
+}
+
+/* site name on the left, theme button on the right, nav below */
+header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav {
+    flex-basis: 100%;
+}
+
+#theme-toggle {
+    padding: 0.35rem 0.95rem;
+    background: transparent;
+    color: var(--primary-text);
+    border: 1px solid var(--muted);
+    border-radius: 999px;
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#theme-toggle:hover {
+    border-color: var(--highlight);
+    color: var(--highlight);
+}
+
+:root[data-theme="dark"] #theme-toggle {
+    background: var(--secondary-bg);
+}
+
+#theme-toggle:focus-visible {
+    outline: 3px solid var(--highlight);
+    outline-offset: 2px;
+}
+
+#theme-toggle[hidden] {
+    display: none;
 }
 
 /* the bar with About, Projects, and Contact */
